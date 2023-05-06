@@ -43,6 +43,8 @@ export default function Home() {
         <section id="contact" className="snap-center">
           <ContactMe />
         </section>
+
+        {/* <footer className="fixed bottom-5 w-full">Khaled Sarhan</footer> */}
         {/* </main> */}
       </div>
     </div>

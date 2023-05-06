@@ -34,7 +34,7 @@ const index = (props: Props) => {
         viewport={{
           once: true,
         }}
-        src="/assets/small.png"
+        src="/assets/profilePic.png"
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 xl:w-[500px] xl:h-[600px]"
       />
 

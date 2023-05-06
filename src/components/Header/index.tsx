@@ -59,10 +59,10 @@ const index = (props: Props) => {
           fgColor="gray"
           bgColor="transparent"
           style={{ width: 40, height: 40 }}
-          url="mailto:k.sarhan311@gmail.com"
+          url="#contact"
         />
         <a
-          href="mailto:k.sarhan311@gmail.com"
+          href="#contact"
           className="hidden md:inline-flex text-sm text-gray-400"
         >
           k.sarhan311@gmail.com
