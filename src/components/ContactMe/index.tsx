@@ -5,18 +5,30 @@ import {
   BsFillEnvelopeFill,
   BsFillPinMapFill,
 } from "react-icons/bs";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "./schema";
+import ErrorMessage from "./ErrorMessage";
 
-type Props = {};
+type FormData = {
+  Name: string;
+  Email: string;
+  Subject: string;
+  Message: string;
+};
 
-const Contact = (props: Props) => {
-  const { register } = useForm<any>();
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
 
-  const onSubmit: SubmitHandler<any> = async (e: any) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: FormData, e: any) => {
     await emailjs.sendForm(
       "service_pogyxbu",
       "template_h3oufl4",
@@ -26,6 +38,7 @@ const Contact = (props: Props) => {
     toast.success("I got your message, Thanks!");
   };
 
+  // console.log("errors", errors);
   return (
     <motion.div
       initial={{
@@ -62,22 +75,30 @@ const Contact = (props: Props) => {
           </div>
         </div>
         <form
-          className="flex flex-col space-y-2 w-fit mx-auto"
-          onSubmit={onSubmit}
+          className="flex flex-col w-fit mx-auto"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex space-x-2">
-            <input
-              placeholder="Name"
-              type="text"
-              className="contactInput"
-              {...register("Name")}
-            />
-            <input
-              placeholder="Email"
-              type="text"
-              className="contactInput"
-              {...register("Email")}
-            />
+            <div>
+              <input
+                placeholder="Name"
+                type="text"
+                className="contactInput"
+                {...register("Name", {
+                  required: "This is required message",
+                })}
+              />
+              <ErrorMessage message={errors?.Name?.message} />
+            </div>
+            <div>
+              <input
+                placeholder="Email"
+                type="text"
+                className="contactInput"
+                {...register("Email")}
+              />
+              <ErrorMessage message={errors?.Email?.message} />
+            </div>
           </div>
 
           <input
@@ -86,11 +107,13 @@ const Contact = (props: Props) => {
             className="contactInput"
             {...register("Subject")}
           />
+          <ErrorMessage message={errors?.Subject?.message} />
           <textarea
             className="contactInput"
             placeholder="Message"
             {...register("Message")}
           />
+          <ErrorMessage message={errors?.Message?.message} />
           <button
             type="submit"
             className="bg-[#f7ab0a] py-5 px-10 rounded-md text-black font-bold text-lg"
