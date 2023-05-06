@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiNextdotjs,
-  SiStrapi,
-  SiTailwindcss,
-  SiMaterialui,
-  SiStorybook,
-} from "react-icons/si";
+// import {
+//   SiTypescript,
+//   SiNextdotjs,
+//   SiStrapi,
+//   SiTailwindcss,
+//   SiMaterialui,
+//   SiStorybook,
+// } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 
 type Props = {};
@@ -42,13 +42,13 @@ const ExperianceCard = (props: Props) => {
         <p className="font-bold text-2xl mt-1">TechyTypes</p>
         <div className="flex space-x-2 my-2">
           <FaReact title="React" />
-          <SiTypescript title="Typescript" />
+          {/* <SiTypescript title="Typescript" />
           <SiNextdotjs title="Next.js" />
           <IoLogoJavascript title="Javascript" />
           <SiStrapi title="Strapi" />
           <SiTailwindcss title="Tailwindcss" />
           <SiMaterialui title="MaterialUI" />
-          <SiStorybook title="Storybook" />
+          <SiStorybook title="Storybook" /> */}
         </div>
         <p className="uppercase py-5 text-gray-300">Oct 2020 - Dec 2022</p>
 
