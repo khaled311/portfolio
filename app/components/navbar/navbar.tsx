@@ -15,7 +15,7 @@ export const Navbar = () => {
     >
       <nav className="flex justify-between items-center py-4 px-8">
         <div className="basis-1/3 flex justify-start">
-          <Link href="/">
+          <Link href="/" className="group">
             <Logo />
           </Link>
         </div>
@@ -29,12 +29,12 @@ export const Navbar = () => {
         <ul className="flex space-x-8 basis-1/3 justify-end">
           <li>
             <a href={links.linkedIn} className="group" target="_blank">
-              <LinkedIn className="group-hover:[&>path]:fill-white" />
+              <LinkedIn className="group-hover:[&>path]:fill-[#EED282]" />
             </a>
           </li>
           <li>
             <a href={links.github} className="group" target="_blank">
-              <Github className="group-hover:[&>path]:fill-white" />
+              <Github className="group-hover:[&>path]:fill-[#EED282]" />
             </a>
           </li>
         </ul>

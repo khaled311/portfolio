@@ -9,14 +9,15 @@ function LogoIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#fff"
         stroke="#fff"
         strokeMiterlimit={10}
-        className="transition-all"
+        // className="transition-all group-hover:opacity-100"
+        className="transition-all group-hover:fill-[#EED282] group-hover:stroke-[#EED282] group-hover:opacity-100"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M45.625 18.482h-7.184c0 5.535 4 8.817 10.179 8.817 5.872 0 10.115-2.875 10.115-8.42 0-5.749-4.79-7.01-8.5-7.986l-.089-.023-.042-.01c-2.355-.598-4.24-1.076-4.24-2.513 0-1.18 1.195-1.724 2.439-1.724 1.443 0 2.633.754 2.633 2.36h6.97c0-5.167-3.478-8.287-9.535-8.287-5.96 0-9.618 2.836-9.618 7.837 0 5.764 4.598 6.91 8.239 7.819l.077.019.044.01c2.418.583 4.345 1.048 4.345 2.63 0 1.386-1.39 2.17-2.853 2.17-1.585 0-2.98-.886-2.98-2.699zm-23.19-2.959l7.481 11.566h8.55l-9.13-13.5L37.686.905H29.36l-6.896 11.037V.906h-7.18V27.09h7.15V15.523z"
         fill="#fff"
-        className="transition-all"
+        // className="transition-all group-hover:opacity-20"
       />
     </svg>
   );
