@@ -3,14 +3,12 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-type Props = {};
-
-const NotFound = (props: Props) => {
+const NotFound = () => {
   const router = useRouter();
 
   useEffect(() => {
     router.replace("/");
-  }, []);
+  }, [router]);
   return <></>;
 };
 

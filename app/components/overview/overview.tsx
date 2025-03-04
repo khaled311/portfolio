@@ -19,13 +19,13 @@ export const Overview = () => {
           </h2>
           <p className="text-sm md:ps-9">
             As a dedicated front-end developer with expertise in responsive web
-            design, I'm committed to contributing to team success. I have
+            design, I&apos;m committed to contributing to team success. I have
             extensive experience in the software product development life cycle
             and pride myself on writing clear, efficient, and maintainable code.
             I stay up-to-date with industry best practices to deliver
             cutting-edge websites with exceptional user experiences. With a
-            collaborative mindset and a focus on detail, I'm eager to help you
-            achieve your web development goals.
+            collaborative mindset and a focus on detail, I&apos;m eager to help
+            you achieve your web development goals.
           </p>
         </div>
       </div>

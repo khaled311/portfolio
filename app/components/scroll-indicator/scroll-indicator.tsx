@@ -3,9 +3,7 @@
 import { useScroll, useSpring } from "motion/react";
 import { motion } from "motion/react";
 
-type Props = {};
-
-export const ScrollIndicator = (props: Props) => {
+export const ScrollIndicator = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

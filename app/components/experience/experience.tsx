@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
 
 export const Experience = () => {
   return (
@@ -65,9 +64,9 @@ export const Experience = () => {
             </span>
             <ul className="list-disc space-y-2">
               <li className="text-sm text-white">
-                Played a key role in developing the "do Analysis" application, a
-                platform designed for data collection and analysis from social
-                media channels.
+                Played a key role in developing the &quot;do Analysis&quot;
+                application, a platform designed for data collection and
+                analysis from social media channels.
               </li>
               <li className="text-sm text-white">
                 Leveraged modern technologies to enhance and optimize the

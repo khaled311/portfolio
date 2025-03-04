@@ -6,13 +6,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { Modal } from "../modal/modal";
 
-const projectsData = [
-  {
-    title: "TechyTypes Revamped Website",
-    tags: ["HTML", "CSS", "React.js"],
-    describtion: "",
-  },
-];
+// const projectsData = [
+//   {
+//     title: "TechyTypes Revamped Website",
+//     tags: ["HTML", "CSS", "React.js"],
+//     describtion: "",
+//   },
+// ];
 
 export const Work = () => {
   const [active, setActive] = useState(false);
