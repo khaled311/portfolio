@@ -14,5 +14,4 @@ function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const ChevronDown = React.memo(ChevronDownIcon);
-export default ChevronDown;
+export const ChevronDown = React.memo(ChevronDownIcon);

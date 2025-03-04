@@ -12,7 +12,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log("montserrat", montserrat);
   return (
     <html lang="en">
       <body

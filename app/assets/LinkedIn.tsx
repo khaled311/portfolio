@@ -12,5 +12,4 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const LinkedIn = React.memo(LinkedInIcon);
-export default LinkedIn;
+export const LinkedIn = React.memo(LinkedInIcon);

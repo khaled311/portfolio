@@ -1,7 +1,6 @@
 "use client";
 
-import { ChevronDown } from "@/assets";
-import File from "@/assets/File";
+import { ChevronDown, File } from "@/assets";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
@@ -11,16 +10,24 @@ export const HeroSection = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: ["Senior Front-End Developer."],
-      typeSpeed: 100,
+      typeSpeed: 80,
       backSpeed: 50,
-      // loop: true,
+      loop: true,
     });
 
     return () => {
-      // Destroy Typed instance during cleanup to stop animation
       typed.destroy();
     };
   }, []);
+
+  const scrollDown = () => {
+    const windowHight = window.innerHeight;
+    window.scrollTo({
+      top: windowHight - 50,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="h-screen flex items-center justify-center flex-col">
       <div className="text-center mt-auto">
@@ -40,7 +47,10 @@ export const HeroSection = () => {
           <span>Resume</span>
         </a>
       </div>
-      <div className="flex flex-col items-center justify-center mt-auto pb-4 gap-4 animate-bounce">
+      <div
+        className="flex flex-col items-center justify-center mt-auto pb-4 gap-4 animate-bounce cursor-pointer"
+        onClick={scrollDown}
+      >
         <span>Scroll</span>
         <ChevronDown />
       </div>

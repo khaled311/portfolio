@@ -12,5 +12,4 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const Github = React.memo(GithubIcon);
-export default Github;
+export const Github = React.memo(GithubIcon);

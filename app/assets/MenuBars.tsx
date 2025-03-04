@@ -37,5 +37,4 @@ function MenuBarsIcon({
   );
 }
 
-const MenuBars = React.memo(MenuBarsIcon);
-export default MenuBars;
+export const MenuBars = React.memo(MenuBarsIcon);

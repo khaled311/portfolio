@@ -12,5 +12,4 @@ function FileIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const File = React.memo(FileIcon);
-export default File;
+export const File = React.memo(FileIcon);

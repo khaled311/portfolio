@@ -23,5 +23,4 @@ function LogoIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const Logo = React.memo(LogoIcon);
-export default Logo;
+export const Logo = React.memo(LogoIcon);
