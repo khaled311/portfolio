@@ -31,7 +31,7 @@ export const HeroSection = () => {
   return (
     <section className="h-screen flex items-center justify-center flex-col">
       <div className="text-center mt-auto">
-        <span className="text-5xl font-bold bg-gradient-to-r from-[#636FDF] via-[#A647CC] to-[#E14D8F] bg-clip-text text-transparent">
+        <span className="text-5xl font-bold bg-[linear-gradient(97.68deg,#636FDF_1.29%,#A647CC_26.09%,#E14D8F_50.89%,#EF9D5D_75.69%,#EED282_100.49%)] bg-clip-text text-transparent">
           Hello,
         </span>
         <h1 className="text-4xl font-extrabold mt-3 mb-8">
@@ -57,10 +57,3 @@ export const HeroSection = () => {
     </section>
   );
 };
-
-{
-  /* <span className="font-bold bg-gradient-to-r from-[#636FDF] via-[#A647CC] via-[#E14D8F] via-[#EF9D5D] to-[#EED282] bg-clip-text text-transparent">  */
-}
-{
-  /* This is the original code for linear animation */
-}

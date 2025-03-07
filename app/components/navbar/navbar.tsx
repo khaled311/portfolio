@@ -6,7 +6,7 @@ import { Github, LinkedIn, Logo } from "@/assets";
 export const Navbar = () => {
   return (
     <motion.div
-      className="container mx-auto fixed top-0 left-0 right-0 z-10"
+      className="container fixed top-0 left-0 right-0 z-10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
     >

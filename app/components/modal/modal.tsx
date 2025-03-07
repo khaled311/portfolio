@@ -35,7 +35,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.2, easing: "ease-out" }}
-            className="relative bg-white rounded-2xl shadow-lg p-6 max-w-4xl max-h-screen overflow-y-auto"
+            className="relative bg-white rounded-2xl shadow-lg p-6 max-w-4xl h-[calc(100vh-4rem)] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button className="absolute top-3 end-3" onClick={() => onClose()}>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Overview = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container">
       <div className="flex md:flex-row flex-col items-center md:gap-[90px] gap-6 md:mx-[60px]">
         <div className="shrink-0">
           <Image

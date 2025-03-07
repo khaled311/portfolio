@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Experience = () => {
   return (
-    <section className="container mx-auto px-4">
+    <section className="container px-4">
       <div className="mt-[248px]">
         <h2 className="text-base font-semibold opacity-30 text-center md:mb-[82px] mb-6 uppercase">
           Experience

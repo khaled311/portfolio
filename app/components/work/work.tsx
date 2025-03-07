@@ -6,7 +6,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { Modal } from "../modal/modal";
 
-// pass index to setOpen to filter projects by index
+type Project = {
+  title: string;
+  tags: string[];
+  description: string;
+  image: string;
+};
 
 const projectsData = [
   {
@@ -37,17 +42,20 @@ const projectsData = [
 ];
 
 export const Work = () => {
-  const [active, setActive] = useState(false);
+  const [state, setState] = useState({
+    active: false,
+    project: {} as Project,
+  });
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container px-4">
       <h2 className="text-base font-semibold opacity-30 text-center md:mb-[82px] mb-6 uppercase">
         Selected work
       </h2>
       <div className="flex flex-col gap-20">
         {projectsData.map((project, index) => (
           <div
-            className={clsx("flex items-start gap-7", {
+            className={clsx("flex items-center gap-7", {
               "flex-row-reverse": index % 2 !== 0,
             })}
             key={index}
@@ -61,7 +69,13 @@ export const Work = () => {
               <h3 className="my-6 font-bold text-[40px]">{project.title}</h3>
               <button
                 className="w-[52px] h-[52px] rounded-full border border-solid border-white/10 flex items-center justify-center transition-all hover:bg-white group relative"
-                onClick={() => setActive((prev) => !prev)}
+                onClick={() =>
+                  setState((prev) => ({
+                    ...prev,
+                    active: !prev.active,
+                    project: project,
+                  }))
+                }
               >
                 <span className="block w-1 h-1 bg-[#5F5F5F] rounded-full group-hover:opacity-0 group-hover:scale-0 transition-all absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
                 <Arrow className="transition-all scale-0 opacity-0 origin-bottom-left	 group-hover:scale-100 group-hover:opacity-100" />
@@ -69,7 +83,13 @@ export const Work = () => {
             </div>
             <div
               className="ms-auto cursor-pointer shrink-0"
-              onClick={() => setActive((prev) => !prev)}
+              onClick={() =>
+                setState((prev) => ({
+                  ...prev,
+                  active: !prev.active,
+                  project: project,
+                }))
+              }
             >
               <Image
                 src={project.image}
@@ -84,9 +104,12 @@ export const Work = () => {
           </div>
         ))}
       </div>
-      <Modal isOpen={active} onClose={() => setActive(false)}>
+      <Modal
+        isOpen={state.active}
+        onClose={() => setState((prev) => ({ ...prev, active: false }))}
+      >
         <Image
-          src={"/techytypes_project.png"}
+          src={state?.project?.image}
           alt="project image"
           width={986}
           height={473}
@@ -96,12 +119,18 @@ export const Work = () => {
         />
         <div className="text-slate-900">
           <h3 className="my-6 font-bold text-[40px]">
-            TechyTypes Revamped Website
+            {state?.project?.title}
           </h3>
           <ul className="flex gap-4 text-xs uppercase">
-            <li className="text-[#eed282] text-3xl">Next.js</li>
+            {state?.project?.tags?.map((tag) => (
+              <li className="text-[#eed282] text-3xl" key={tag}>
+                {tag}
+              </li>
+            ))}
           </ul>
-          <p className="leading-relaxed text-black/60 mt-6"></p>
+          <p className="leading-relaxed text-black/60 mt-6">
+            {state?.project?.description}
+          </p>
         </div>
       </Modal>
     </div>
