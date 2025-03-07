@@ -8,7 +8,7 @@ import { Work } from "./components/work/work";
 export default function Home() {
   return (
     <>
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
       <main>
         <Navbar />
         <HeroSection />

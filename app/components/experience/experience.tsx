@@ -19,7 +19,13 @@ export const Experience = () => {
             <div className="w-2 h-2 rounded-full bg-[#363441] absolute -bottom-1 left-1/2 -translate-x-1"></div>
           </div>
           <div className="pb-6 md:mb-14 mb-6 px-4">
-            <Image src={"/sdaia.svg"} alt="SDAIA" width={100} height={42} />
+            <Image
+              src={"/sdaia.svg"}
+              alt="SDAIA"
+              width={100}
+              height={42}
+              draggable="false"
+            />
             <h2 className="m-[24px_0_8px] text-base text-white">
               Senior Front-end Developer
             </h2>
@@ -55,6 +61,7 @@ export const Experience = () => {
               alt="SDAIA"
               width={100}
               height={42}
+              draggable="false"
             />
             <h2 className="m-[24px_0_8px] text-base text-white">
               Front-end Developer
@@ -80,7 +87,13 @@ export const Experience = () => {
             </ul>
           </div>
           <div className="pb-6 col-start-1 row-start-3 ps-[90px] px-4">
-            <Image src={"/tasawk.svg"} alt="SDAIA" width={60} height={42} />
+            <Image
+              src={"/tasawk.svg"}
+              alt="SDAIA"
+              width={60}
+              height={42}
+              draggable="false"
+            />
             <h2 className="m-[24px_0_8px] text-base text-white">
               UI/Opencart Developer
             </h2>

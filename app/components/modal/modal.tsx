@@ -1,5 +1,4 @@
 "use client";
-
 import { Close } from "@/assets";
 import { motion } from "motion/react";
 import { useEffect } from "react";
@@ -12,6 +11,11 @@ interface ModalProps {
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   useEffect(() => {
+    const body = document.body;
+    body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
@@ -23,16 +27,15 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-20"
           onClick={onClose}
         >
-          {/* Prevent click inside modal from closing */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3, easing: "ease-out" }}
-            className="relative bg-white rounded-2xl shadow-lg p-6 w-full max-w-md"
+            transition={{ duration: 0.2, easing: "ease-out" }}
+            className="relative bg-white rounded-2xl shadow-lg p-6 max-w-4xl max-h-screen overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button className="absolute top-3 end-3" onClick={() => onClose()}>
